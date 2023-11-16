@@ -18,7 +18,6 @@ public class SunsetAnimation {
 
     public SunsetAnimation(GraphicsConsole console, int numberOfFrames) throws InterruptedException {
         SunsetAnimation.console = console;
-        console.setAntiAlias(true);
         console.setBackgroundColor(Color.BLUE);
         drawGraphics(numberOfFrames);
         fadeOut();
