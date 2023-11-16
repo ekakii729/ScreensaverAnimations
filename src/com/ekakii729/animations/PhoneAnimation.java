@@ -35,14 +35,18 @@ public class PhoneAnimation {
 
     private void drawGraphics(int numberOfFrames) throws InterruptedException {
         final int SLEEP_TIME_IN_MILLISECONDS = 2000; // the sleep time of the graphics
+        final int EQUALS_BUTTON = 61; // key code for equals button
         int frameCounter = 0; // counter for amount of elapsed frames
         while (frameCounter < numberOfFrames) {
+            console.drawString("Spam '=' to skip to next animation", 5, 780);
             console.setBackgroundColor(getRandomColor());
             drawPhoneBorder();
             Thread.sleep(SLEEP_TIME_IN_MILLISECONDS);
+            if (console.getKeyCode() == EQUALS_BUTTON) break;
             drawPhoneScreen();
             drawText();
             Thread.sleep(SLEEP_TIME_IN_MILLISECONDS);
+            if (console.getKeyCode() == EQUALS_BUTTON) break;
             console.clear();
             frameCounter += 10;
         }
@@ -150,6 +154,6 @@ public class PhoneAnimation {
      */
 
     public static void main(String[] args) throws InterruptedException {
-        new PhoneAnimation(new GraphicsConsole(800,800), 10);
+        new PhoneAnimation(new GraphicsConsole(800,800), 100);
     }
 }
