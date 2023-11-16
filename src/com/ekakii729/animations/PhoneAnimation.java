@@ -44,7 +44,7 @@ public class PhoneAnimation {
             drawText();
             Thread.sleep(SLEEP_TIME_IN_MILLISECONDS);
             console.clear();
-            frameCounter += 2;
+            frameCounter += 10;
         }
     }
 
